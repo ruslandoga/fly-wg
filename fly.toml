@@ -1,0 +1,32 @@
+# fly.toml file generated for looking-glass on 2022-05-04T15:51:00+03:00
+
+app = "looking-glass"
+
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[build]
+  image = "ghcr.io/ruslandoga/fly-wg:master"
+
+[mounts]
+  source = "wg"
+  destination = "/config"
+
+[env]
+  TZ = "Europe/Amsterdam"
+  SERVERURL = "looking-glass.fly.dev"
+  PEERS = "mac3,lotka2"
+  PEERDNS = "auto"
+  SERVERPORT = "51820"
+
+[experimental]
+  allowed_public_ports = [51820]
+  # auto_rollback = true
+
+[[services]]
+  internal_port = 51820
+  protocol = "udp"
+
+  [[services.ports]]
+    port = "51820"
