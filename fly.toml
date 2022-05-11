@@ -16,7 +16,7 @@ processes = []
 [env]
   TZ = "Europe/Amsterdam"
   SERVERURL = "looking-glass.fly.dev"
-  PEERS = "mac3,lotka2,droid1,pixel1"
+  PEERS = "mac3,lotka2,droid1,pixel1,mom1"
   PEERDNS = "1.1.1.1,1.0.0.1,2606:4700:4700::1111,2606:4700:4700::1001"
   SERVERPORT = "51820"
 
